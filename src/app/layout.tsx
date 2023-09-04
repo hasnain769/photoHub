@@ -1,7 +1,12 @@
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/components/ui/avatar"
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-
+import { Sidenav } from "@/components/ui/sidenav"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -15,8 +20,24 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body className={inter.className}>
+        
+          <div className='p-4 text-lg border-b-2 flex justify-between'>
+            <h1>PhotoHub</h1>
+            <Avatar>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+          </div >
+          <div className=' min-h-screen text-white flex'>
+          <Sidenav />
+          <div className="w-full min-h-screen py-5 px-3">
+          {children}
+          </div>
+          
+        </div>
+        </body>
     </html>
   )
 }
