@@ -1,19 +1,17 @@
 
-import UploadImage from '@/components/ui/uploadImage'
+
 import cloudinary from 'cloudinary'
 import CloudineryImage from '@/components/ui/cloudineryImage';
 import { Tags } from 'lucide-react';
-export type searchResult ={
-    public_id : string,
-    tags :string []
-}
+import { searchResult } from '../gallery/page';
+
 
 export default async function page() {
    const result=await cloudinary.v2.search
-  .expression('resource_type:image ')
+  .expression('resource_type:image AND tags =favorite')
   .sort_by('created_at','desc')
   .with_field("tags")
-  .max_results(15)
+  .max_results(5)
   .execute() as {resources : searchResult[]}; 
   
 
@@ -21,7 +19,7 @@ export default async function page() {
     <div className='flex flex-col'>
          <div className='flex justify-between text-4xl   font-semibold px-3'>
          <h2>Gallery</h2>
-        <UploadImage/>
+       
          </div>
         
         <div className='flex   justify-evenly flex-wrap pt-16'>

@@ -1,16 +1,17 @@
 import React from "react";
 import { Button } from "./button";
 import Link from "next/link";
+import Heart from "./heart";
 
 export const Sidenav = () => {
   return (
-    <div className="px-3 py-2 w-1/4 ">
+    <div className="px-3 py-2 w-1/4    sticky-2">
       <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
         Discover
       </h2>
       <div className="space-y-1  ">
         <Link href='/gallery'>
-        <Button variant="secondary" className="w-full justify-start flex gap-2">
+        <Button variant="ghost" className="w-full justify-start flex gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -47,23 +48,12 @@ export const Sidenav = () => {
           </svg>
           Albums
         </Button>
+        <Link href='/favorites'>
         <Button variant="ghost" className="w-full justify-start flex gap-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-            />
-          </svg>
+          <Heart className="w-6 h-6"/>
           Favorites
         </Button>
+        </Link>
       </div>
     </div>
   );
