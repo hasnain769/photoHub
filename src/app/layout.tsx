@@ -7,6 +7,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Sidenav } from "@/components/ui/sidenav"
+import Link from "next/link"
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body className={inter.className}>
         
           <div className='p-4 text-lg border-b-2 flex justify-between'>
-            <h1>PhotoHub</h1>
+            <Link href='/'><h1>PhotoHub</h1></Link>
             <Avatar>
       <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
       <AvatarFallback>CN</AvatarFallback>

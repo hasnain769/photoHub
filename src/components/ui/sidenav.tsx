@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./button";
+import Link from "next/link";
 
 export const Sidenav = () => {
   return (
@@ -8,6 +9,7 @@ export const Sidenav = () => {
         Discover
       </h2>
       <div className="space-y-1  ">
+        <Link href='/gallery'>
         <Button variant="secondary" className="w-full justify-start flex gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +27,9 @@ export const Sidenav = () => {
           </svg>
           Gallery
         </Button>
+
+        </Link>
+        
         <Button variant="ghost" className="w-full justify-start flex gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
