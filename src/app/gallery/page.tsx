@@ -32,7 +32,7 @@ export default async function page() {
               image_data ={item}
              alt="something"
              width='400'
-             height ='300'
+             height ='350'
              />
             ))
         }
