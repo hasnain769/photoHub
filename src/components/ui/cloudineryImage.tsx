@@ -5,6 +5,7 @@ import SetFavorite from "./actions"
 import {  useEffect, useState, useTransition } from "react"
 import { searchResult } from "@/app/gallery/page"
 import FullHeart from "./FullHeart"
+import { DropdownMenuDemo } from "./dropdown"
 export default function CloudineryImage(props :any & searchResult) {
 
   const [transition , starttransition]= useTransition();
@@ -29,6 +30,7 @@ export default function CloudineryImage(props :any & searchResult) {
           } 
            className="absolute top-8 right-2 w-6 h-6 hover:text-red-600 cursor-pointer"/>
            }
+           <DropdownMenuDemo/>
            
     </div>
   )

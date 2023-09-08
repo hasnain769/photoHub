@@ -5,7 +5,7 @@ import Heart from "./heart";
 
 export const Sidenav = () => {
   return (
-    <div className="lg:pl-3 py-2  fixed   top-[85px] lg:left-7 left-1">
+    <div className="pl-3 py-2  fixed   top-[85px] lg:left-7 left-1">
       <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
         Discover
       </h2>
