@@ -6,6 +6,7 @@ import {  useEffect, useState, useTransition } from "react"
 import { searchResult } from "@/app/gallery/page"
 import FullHeart from "./FullHeart"
 import { DropdownMenuDemo } from "./dropdown"
+import MenuIcon from "./MenuIcon"
 export default function CloudineryImage(props :any & searchResult) {
 
   const [transition , starttransition]= useTransition();
@@ -22,15 +23,16 @@ export default function CloudineryImage(props :any & searchResult) {
            onClick={()=>
             starttransition(()=>SetFavorite(props.image_data.public_id ,false))
           } 
-           className="absolute top-8 right-2 w-6 h-6 text-red-600 hover:text-white cursor-pointer"/>
+           className="absolute top-8 left-2 w-6 h-6 text-red-600 hover:text-white cursor-pointer"/>
             :
             <Heart 
            onClick={()=>
             starttransition(()=>SetFavorite(props.image_data.public_id ,true))
           } 
-           className="absolute top-8 right-2 w-6 h-6 hover:text-red-600 cursor-pointer"/>
+           className="absolute top-8 left-2 w-6 h-6 hover:text-red-600 cursor-pointer"/>
            }
-           <DropdownMenuDemo/>
+         
+           <DropdownMenuDemo className='absolute top-7 right-[3rem] w-1 h-4 hover:text-black cursor-pointer'/>
            
     </div>
   )
