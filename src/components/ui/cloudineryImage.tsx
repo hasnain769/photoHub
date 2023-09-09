@@ -32,7 +32,7 @@ export default function CloudineryImage(props :any & searchResult) {
            className="absolute top-8 left-2 w-6 h-6 hover:text-red-600 cursor-pointer"/>
            }
          
-           <DropdownMenuDemo className='absolute top-7 right-[3rem] w-1 h-4 hover:text-black cursor-pointer'/>
+           <DropdownMenuDemo image={props.image_data.public_id}/>
            
     </div>
   )

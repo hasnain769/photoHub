@@ -20,10 +20,12 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu"
 import MenuIcon from "./MenuIcon"
+import { Addtoalbum } from "./Addtoalbum"
+import { searchResult } from "@/app/gallery/page"
   
-  export function DropdownMenuDemo(props:any) {
+  export function DropdownMenuDemo({image}:{image:searchResult}) {
     return (
-      <div {...props}>
+      <div className='absolute top-7 right-[3rem] w-1 h-4 hover:text-black cursor-pointer'>
         
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -33,10 +35,10 @@ import MenuIcon from "./MenuIcon"
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <FolderPlus className="mr-2 h-4 w-4" />
-              <span>Add to Album</span>
-              
+            <DropdownMenuItem asChild>
+              {/* <FolderPlus className="mr-2 h-4 w-4" />
+              <span>Add to Album</span> */}
+              <Addtoalbum image={image}/>
             </DropdownMenuItem>
             
             

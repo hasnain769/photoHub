@@ -1,4 +1,5 @@
 "use server"
+import { searchResult } from '@/app/gallery/page'
 import cloudinary from 'cloudinary'
 import { revalidatePath } from 'next/cache'
 export default async function SetFavorite(public_id :string ,isfavorited :boolean) {
@@ -11,4 +12,10 @@ export default async function SetFavorite(public_id :string ,isfavorited :boolea
   await new Promise((resolve)=>setTimeout(resolve,1000));
  
   revalidatePath("/gallery")
+}
+export async function Movetoalbum(image :searchResult ,folder :string){
+  
+  const existingfolder =await cloudinary.v2.api.create_folder(folder);
+  await cloudinary.v2.uploader.rename(image,`${folder}/${image}`); 
+  
 }
