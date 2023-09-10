@@ -19,9 +19,7 @@ export default async function page() {
     <div className='flex flex-col'>
          <div className='flex justify-center text-4xl   font-semibold px-3'>
          <h2>Favorites</h2>
-       
          </div>
-        
         <div className='flex   justify-evenly flex-wrap pt-16'>
         {
             result.resources.map((item)=>(
