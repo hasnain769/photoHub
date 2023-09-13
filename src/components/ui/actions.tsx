@@ -15,7 +15,13 @@ export default async function SetFavorite(public_id :string ,isfavorited :boolea
 }
 export async function Movetoalbum(image :searchResult ,folder :string){
   
+let parts =image.public_id.split("/")
+ 
+const publicId =parts[parts.length-1]
+
+
   const existingfolder =await cloudinary.v2.api.create_folder(folder);
-  await cloudinary.v2.uploader.rename(image,`${folder}/${image}`); 
+  
+  await cloudinary.v2.uploader.rename(image.public_id,`${folder}/${publicId}`); 
   
 }
