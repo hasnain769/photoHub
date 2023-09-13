@@ -4,7 +4,8 @@ import {
     
     User,
    
-   FolderPlus ,
+   FolderPlus, 
+   Pencil,
   } from "lucide-react"
   
   import { Button } from "@/components/ui/button"
@@ -22,6 +23,7 @@ import {
 import MenuIcon from "./MenuIcon"
 import { Addtoalbum } from "./Addtoalbum"
 import { searchResult } from "@/app/gallery/page"
+import Link from "next/link"
   
   export function DropdownMenuDemo({image}:{image:searchResult}) {
     
@@ -40,6 +42,9 @@ import { searchResult } from "@/app/gallery/page"
               {/* <FolderPlus className="mr-2 h-4 w-4" />
               <span>Add to Album</span> */}
               <Addtoalbum image={image}/>
+            </DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <Link href={`/edit?public_id=${encodeURIComponent(image.public_id)}`}><Pencil className="w-4 h-4 mr-8"/>Edit</Link>
             </DropdownMenuItem>
             
             
