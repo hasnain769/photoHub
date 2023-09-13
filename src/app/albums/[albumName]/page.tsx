@@ -19,7 +19,6 @@ export default async function page({params}:{params :{albumName :string}}) {
     <div className='flex flex-col'>
          <div className='flex justify-between text-4xl   font-semibold px-3'>
          <h2>{params.albumName}</h2>
-        
          </div>
         
         <div className='flex   justify-evenly flex-wrap pt-16'>
