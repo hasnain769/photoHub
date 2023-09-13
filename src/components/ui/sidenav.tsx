@@ -30,7 +30,7 @@ export const Sidenav = () => {
         </Button>
 
         </Link>
-        
+        <Link href="/albums">
         <Button variant="ghost" className="w-full justify-start flex gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -48,6 +48,7 @@ export const Sidenav = () => {
           </svg>
           Albums
         </Button>
+        </Link>
         <Link href='/favorites'>
         <Button variant="ghost" className="w-full justify-start flex gap-2">
           <Heart className="w-6 h-6"/>
