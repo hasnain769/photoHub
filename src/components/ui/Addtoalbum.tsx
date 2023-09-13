@@ -17,6 +17,7 @@ import { useState } from "react"
 import { Movetoalbum } from "./actions"
 
 export function Addtoalbum({image}:{image:searchResult}) {
+  
     const [album,setalbum]= useState('family')
     const [open , openchange]=useState(false)
   return (

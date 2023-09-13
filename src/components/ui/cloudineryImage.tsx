@@ -8,7 +8,7 @@ import FullHeart from "./FullHeart"
 import { DropdownMenuDemo } from "./dropdown"
 import MenuIcon from "./MenuIcon"
 export default function CloudineryImage(props :any & searchResult) {
-
+  
   const [transition , starttransition]= useTransition();
   
  
@@ -32,7 +32,7 @@ export default function CloudineryImage(props :any & searchResult) {
            className="absolute top-8 left-2 w-6 h-6 hover:text-red-600 cursor-pointer"/>
            }
          
-           <DropdownMenuDemo image={props.image_data.public_id}/>
+           <DropdownMenuDemo image={props.image_data}/>
            
     </div>
   )

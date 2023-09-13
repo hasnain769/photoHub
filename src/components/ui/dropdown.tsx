@@ -24,6 +24,7 @@ import { Addtoalbum } from "./Addtoalbum"
 import { searchResult } from "@/app/gallery/page"
   
   export function DropdownMenuDemo({image}:{image:searchResult}) {
+    
     return (
       <div className='absolute top-7 right-[3rem] w-1 h-4 hover:text-black cursor-pointer'>
         
