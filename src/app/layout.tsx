@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Sidenav } from "@/components/ui/sidenav";
 import Link from "next/link";
+import Logo from "../../public/icons8-image-gallery-64.png"
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,9 +22,13 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <div className="p-4 text-lg border-b-2 flex justify-between">
-          <Link href="/">
+          
+          <Link  href="/"className="flex gap-x-2">
+            <Image src={Logo} alt="logo"className="w-8 h-7" ></Image>
             <h1>PhotoHub</h1>
           </Link>
+          
+          
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
