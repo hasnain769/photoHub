@@ -20,7 +20,7 @@ export default async function Album() {
     <div className='flex justify-around flex-wrap gap-5'>
         {
             folders.map((item)=>(
-                <Albumcard folder={item}/>
+                <Albumcard folder={item} key={item.name}/>
             ))
         }
     </div>

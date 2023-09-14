@@ -1,13 +1,13 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import CloudineryImage from "@/components/ui/cloudineryImage";
+
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { blur ,grayscale } from "@cloudinary/url-gen/actions/effect";
 import { CldImage } from "next-cloudinary";
-import { generativeFill } from "@cloudinary/url-gen/qualifiers/background";
+
 import React, { useState } from "react";
 
-export default function page({
+export default function Page({
   
   searchParams: { public_id },
 }: {
@@ -18,7 +18,7 @@ export default function page({
   const [transformation, settransformation] = useState<
     undefined | "generative-fill" | "blur" | "remove-background" | "grayscale"
   >();
-  const [prompt,setprompt]=useState("e,g car");
+  const [prompt,setprompt]=useState("car");
   return (
     <div className="flex flex-col">
       <h2 className="text-3xl">EDIT</h2>
@@ -62,8 +62,8 @@ export default function page({
             alt="image"
             width={300}
             height={350}
-            blur="1200"
-          />
+            //blur="1200"
+            />
         )}
         {transformation == "remove-background" && (
           <CldImage
@@ -80,7 +80,7 @@ export default function page({
             alt="image"
             width={300}
             height={350}
-            grayscale
+           // grayscale
           />
         )}
       </div>
