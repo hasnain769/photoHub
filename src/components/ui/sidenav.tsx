@@ -5,11 +5,10 @@ import Heart from "./heart";
 
 export const Sidenav = () => {
   return (
-    <div className="pl-3 py-2  fixed   top-[85px] lg:left-7 left-1">
-      <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-        Discover
-      </h2>
+    <div className="pl-3 py-2  lg:fixed   lg:top-[85px] lg:left-7 left-1">
+      
       <div className="space-y-1  ">
+        <div className="flex lg:flex-col flex-row">
         <Link href='/gallery'>
         <Button variant="ghost" className="w-full justify-start flex gap-2">
           <svg
@@ -55,6 +54,7 @@ export const Sidenav = () => {
           Favorites
         </Button>
         </Link>
+      </div>
       </div>
     </div>
   );

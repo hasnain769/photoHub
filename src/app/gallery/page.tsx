@@ -19,12 +19,12 @@ export default async function page() {
 
   return (
     <div className='flex flex-col'>
-         <div className='flex justify-between text-4xl   font-semibold px-3'>
+         <div className='flex justify-between lg:text-4xl  text-2xl  font-semibold px-3'>
          <h2>Gallery</h2>
         <UploadImage/>
          </div>
         
-        <div className='flex   justify-evenly flex-wrap pt-16'>
+        <div className='flex lg:justify-evenly flex-wrap lg:pt-16 pt-7'>
         {
             result.resources.map((item)=>(
              <CloudineryImage src={item.public_id}

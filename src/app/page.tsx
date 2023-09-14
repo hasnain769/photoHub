@@ -14,7 +14,7 @@ type uploadImage ={
 export default function Home() {
 
   return (
-    <main className="flex justify-center items-center">
+    <main className="flex justify-around mt-24 min-h-screen">
     
         <UploadImage/>
 

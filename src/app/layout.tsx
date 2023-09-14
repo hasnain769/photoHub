@@ -28,11 +28,11 @@ export default function RootLayout({
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>
-        <div className=" min-h-screen text-white flex ">
-          <div className="w-1/4">
+        <div className=" min-h-screen text-white flex flex-col lg:flex-row">
+          <div className="lg:w-1/4 w-full ">
           <Sidenav />
           </div>
-          <div className="w-3/4 min-h-screen py-5 px-3 lg:pr-32">{children}</div>
+          <div className="lg:w-3/4 min-h-screen py-16 lg:py-24 px-3 lg:pr-32">{children}</div>
         </div>
       </body>
     </html>

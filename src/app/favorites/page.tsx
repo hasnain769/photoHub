@@ -20,7 +20,7 @@ export default async function page() {
          <div className='flex justify-center text-4xl   font-semibold px-3'>
          <h2>Favorites</h2>
          </div>
-        <div className='flex   justify-evenly flex-wrap pt-16'>
+        <div className='flex   justify-evenly flex-wrap lg:pt-16 pt-7'>
         {
             result.resources.map((item)=>(
              <CloudineryImage src={item.public_id}

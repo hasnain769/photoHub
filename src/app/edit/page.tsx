@@ -1,11 +1,14 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import CloudineryImage from "@/components/ui/cloudineryImage";
+import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { CldImage } from "next-cloudinary";
+import { generativeFill } from "@cloudinary/url-gen/qualifiers/background";
 import React, { useState } from "react";
 
 export default function page({
+  
   searchParams: { public_id },
 }: {
   searchParams: {
@@ -15,28 +18,42 @@ export default function page({
   const [transformation, settransformation] = useState<
     undefined | "generative-fill" | "blur" | "remove-background" | "grayscale"
   >();
+  const [prompt,setprompt]=useState("e,g car");
   return (
     <div className="flex flex-col">
       <h2 className="text-3xl">EDIT</h2>
-      <div className="flex gap-4 mt-10">
+      <div className="flex gap-4 mt-10 flex-wrap">
         <Button variant="secondary" onClick={() => settransformation(undefined)}>clear all</Button>
-        <Button onClick={() => settransformation("generative-fill")}>
-          Generative fill
-        </Button>
+        
         <Button onClick={() => settransformation("blur")}>Blur</Button>
         <Button onClick={() => settransformation("grayscale")}>grayscale</Button>
         <Button onClick={() => settransformation("remove-background")}>Remove Background</Button>
       </div>
-      <div className="mt-5 flex gap-12">
-        <CldImage src={public_id} alt="image" width={300} height={350} />
-        {transformation == "generative-fill" && (
+      <div className="flex gap-2 mt-5">
+      <Input 
+            onChange={(e)=>setprompt(e.target.value)}
+            id="name" value={prompt}
+             className="col-span-3" />
+            <Button onClick={() => settransformation("generative-fill")}>
+          Generative fill
+        </Button>
+      </div>
+      
+      <div className="mt-5 flex lg:flex-row flex-col  lg:gap-12 gap-4 ">
+        {transformation===undefined &&(
+          <CldImage src={public_id} alt="image" width={300} height={350} />
+        )}
+        
+        {transformation ==="generative-fill" && (
           <CldImage
             src={public_id}
             alt="image"
-            width={300}
+            width={400}
             height={350}
-            crop="pad" // Returns the given size with padding
-            fillBackground
+            fillBackground ={{
+                prompt,
+              }
+            }
           />
         )}
         {transformation == "blur" && (
