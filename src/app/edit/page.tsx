@@ -62,7 +62,7 @@ export default function Page({
             alt="image"
             width={300}
             height={350}
-            blur="1200"
+            //blur="1200"
             />
         )}
         {transformation == "remove-background" && (
@@ -80,7 +80,7 @@ export default function Page({
             alt="image"
             width={300}
             height={350}
-            grayscale
+            //grayscale
           />
         )}
       </div>
