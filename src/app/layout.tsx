@@ -23,9 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="p-4 text-lg border-b-2 flex justify-between">
           
-          <Link  href="/"className="flex gap-x-2">
-            <Image src={Logo} alt="logo"className="w-8 h-7" ></Image>
-            <h1>PhotoHub</h1>
+          <Link  href="/"className="flex ">
+            <Image src={Logo} alt="logo"className="w-8 h-7 mr-3" ></Image>
+            <h1 className="lg:text-xl">Photo</h1><h1 className="  bg-orange-500 h-[1.7rem] w-10 lg:text-xl text-black font-semibold">Hub</h1>
           </Link>
           
           
